@@ -4,6 +4,8 @@ boto used to interface with Amazon Web Services (supported for Python 2 and 3)
 """
 import os
 import boto
+import numpy as np
+import pandas as pd
 
 """This python modual containts functions for Richard Inman's Insight Data Engineering Project in
 Silicon Valley (Jan. 2017).
@@ -25,7 +27,7 @@ def get_s3_file_boto(bucket_name, file_path, filename):
 
     Note: This function is intended to load a file onto a single machine that has enough local disc
         space to hold the file. If you want to load a large file only a cluster that is running
-        Spark then use the HiveContext or SQLContext in Spark. 
+        Spark then use the HiveContext or SQLContext in Spark.
 
     Positional argument(s)
     bucket_name -- S3 bucket name
@@ -51,3 +53,24 @@ def get_s3_file_boto(bucket_name, file_path, filename):
 
     # Save the Parquet file to disk
     key.get_contents_to_filename(filename +'.parquet')
+
+def gen_pd_dataframe(col_len=int(1e7)):
+    """Generate a large-ish pandas DataFrame.
+
+    This function generates a pandas DataFrame with two columns, 'ints' and 'floats'. The two
+    columns are populated with random integers and random floats, respectively. The integers are
+    random integers from the 'discrete uniform' distribution in the 'half-open' interval [0, 1000).
+    The floats are sampled from a univariate 'normal' (Gaussian) distribution of mean 0 and variance
+    1. Both columns are of lenght N, which is a specified by a kwarg N (default -> int(1e7)).
+
+    Keyword arguments(s):
+    N -- length of the columns in the DataFrame
+
+    Output(s):
+    df -- pandas DataFrame with two columns: 'ints' and 'floats'
+    """
+    # Build the DataFrame
+    dataframe = pd.DataFrame({'ints': np.random.randint(0, 1000, size=col_len),
+                       'floats': np.random.randn(col_len)})
+    # return the DataFrame
+    return dataframe
