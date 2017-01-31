@@ -71,10 +71,10 @@ def gen_pd_dataframe(col_len=int(1e7)):
     1. Both columns are of lenght N, which is a specified by a kwarg N (default -> int(1e7)).
 
     Keyword arguments(s):
-    N -- length of the columns in the DataFrame
+    col_len -- length of the columns in the DataFrame
 
     Output(s):
-    df -- pandas DataFrame with two columns: 'ints' and 'floats'
+    dataframe -- pandas DataFrame with two columns: 'ints' and 'floats'
     """
     # Build the DataFrame
     dataframe = pd.DataFrame({'ints': np.random.randint(0, 1000, size=col_len),
