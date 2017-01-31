@@ -13,7 +13,7 @@ email: rinman24@gmail.com
 Date Created: 26 Jan. 2017
 """
 
-def get_s3_file(bucket_name, file_path, filename):
+def get_s3_file_boto(bucket_name, file_path, filename):
     """Use bucket_name and file_path to return parquet file.
 
     This function uses access keys from environment variables. Make sure to export access keys by
@@ -23,8 +23,9 @@ def get_s3_file(bucket_name, file_path, filename):
     export AWS_SECRET_ACCESS_KEY=<your-secret-access-key>
     export AWS_DEFALUT_REGION=<your-region> #e.g. us-west-2
 
-    The Parquet file can then be read into a PySpark DataFrame using, for example:
-        parquetFile = spark.read.parquet('filename.parquet')
+    Note: This function is intended to load a file onto a single machine that has enough local disc
+        space to hold the file. If you want to load a large file only a cluster that is running
+        Spark then use the HiveContext or SQLContext in Spark. 
 
     Positional argument(s)
     bucket_name -- S3 bucket name
