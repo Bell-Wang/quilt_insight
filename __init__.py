@@ -1,6 +1,6 @@
 """
 os used for various operating system actions
-boto used to interface with Amazon Web Services (currently only supported for Python 2.6 and 2.7)
+boto used to interface with Amazon Web Services (supported for Python 2 and 3)
 """
 import os
 import boto
@@ -51,4 +51,3 @@ def get_s3_file_boto(bucket_name, file_path, filename):
 
     # Save the Parquet file to disk
     key.get_contents_to_filename(filename +'.parquet')
-
