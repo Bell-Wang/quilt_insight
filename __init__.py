@@ -1,6 +1,8 @@
 """
 os used for various operating system actions
 boto used to interface with Amazon Web Services (supported for Python 2 and 3)
+numpy used for random number generation
+pandas used for creating DataFrames
 """
 import os
 import boto
@@ -74,3 +76,4 @@ def gen_pd_dataframe(col_len=int(1e7)):
                        'floats': np.random.randn(col_len)})
     # return the DataFrame
     return dataframe
+
