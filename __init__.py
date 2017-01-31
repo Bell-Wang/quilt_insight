@@ -3,11 +3,16 @@ os used for various operating system actions
 boto used to interface with Amazon Web Services (supported for Python 2 and 3)
 numpy used for random number generation
 pandas used for creating DataFrames
+fastparquet used for writing Parquet files
 """
 import os
 import boto
 import numpy as np
 import pandas as pd
+try:
+    import fastparquet as fpq
+except ImportError:
+    print('Fastparquet is only available for Python 3.')
 
 """This python modual containts functions for Richard Inman's Insight Data Engineering Project in
 Silicon Valley (Jan. 2017).
@@ -77,3 +82,18 @@ def gen_pd_dataframe(col_len=int(1e7)):
     # return the DataFrame
     return dataframe
 
+def write_df_to_parquet(dataframe, filename='test', cmpr='UNCOMPRESSED'):
+    """Write a pandas DataFrame to Parquet file.
+
+    Positional arguments(s):
+    dataframe -- pandas DataFrame to be converted to Parquet file
+
+    Keywork argument(s):
+    filename -- name of file to be written without extension (default -> 'test')
+    cmpr     -- type of compression to be used (default -> 'UNCOMPRESSED')
+
+    Output(s):
+    none
+    """
+    # write data
+    fpq.write(filename + '.parquet', dataframe, compression=cmpr)
