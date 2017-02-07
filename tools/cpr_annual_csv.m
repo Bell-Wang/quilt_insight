@@ -62,6 +62,6 @@ for coord = 1:ulocs
         result = [result; daily_res];
     end
     % Write the year for the given location to a csv.
-    csvwrite(strcat('csv/',loc_str,'_',num2str(year),'_.csv'), result);
+    csvwrite(strcat('csv/',loc_str,'_',num2str(year),'.csv'), result);
 end
 end
