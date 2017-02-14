@@ -334,6 +334,15 @@ class ParquetPackageStore(PackageStore):
         pfile = fastparquet.ParquetFile(fpath)
         return pfile.to_pandas()
 
+    @classmethod
+    def ls_packages(cls, pkg_dir):
+        parq_packages = [
+            (user, pkg)
+            for user in os.listdir(pkg_dir)
+            for pkg in os.listdir(os.path.join(pkg_dir, user))
+            if os.path.isdir(pkg)]
+        return parq_packages
+
 # Helper functions
 def get_store(user, package, format=None, mode='r'):
     """
