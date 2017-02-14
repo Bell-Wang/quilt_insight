@@ -1,7 +1,7 @@
-function [] = cpr_annual_csv(year, daysInYear, ulocs, daily_samples, res)
+function [] = cpr_annual_csv(filename, year, daysInYear, ulocs, daily_samples, res)
 
 % These are the list of locations where data exists
-lat_lon_pairs = csvread('SolarAnywhere_Lat_Lon.csv');
+lat_lon_pairs = csvread(filename);
 
 % String used to programatically access the day of year from .mat files
 doy = 'DOY';
