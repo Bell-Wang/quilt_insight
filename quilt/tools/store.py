@@ -289,6 +289,13 @@ class HDF5PackageStore(PackageStore):
             if pkg.endswith(HDF5PackageStore.PACKAGE_FILE_EXT)]
         return hdf5_packages
 
+class ParquetPackageStore(PackageStore):
+    """
+    Parquet Implementation of PackageStore.
+    """
+
+    PACKAGE_FILE_EXT = '.parq'
+
 # Helper functions
 def get_store(user, package, format=None, mode='r'):
     """
