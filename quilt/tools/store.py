@@ -307,6 +307,16 @@ class ParquetPackageStore(PackageStore):
             path = self.get_path()
         self.active_path = path
 
+    def create_path(self):
+        """
+        Creates a new subdirectory in the innermost `quilt_packages` directory
+        (or in a new `quilt_packages` directory in the current directory).
+        """
+        path = super(ParquetPackageStore, self).create_path()
+        if not os.path.isdir(path):
+            os.makedirs(path)
+        return path
+
 # Helper functions
 def get_store(user, package, format=None, mode='r'):
     """
