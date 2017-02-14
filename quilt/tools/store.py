@@ -317,6 +317,15 @@ class ParquetPackageStore(PackageStore):
             os.makedirs(path)
         return path
 
+    def save_df(self, df, name, path, ext, target):
+        """
+        Save a DataFrame to the store.
+        """
+        # Below should really use os.path.join, but name is
+        # arriving with a leading / that breaks it.
+        path = self.active_path + name + self.PACKAGE_FILE_EXT
+        fastparquet.write(path, df)
+
 # Helper functions
 def get_store(user, package, format=None, mode='r'):
     """
