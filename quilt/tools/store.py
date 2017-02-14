@@ -296,6 +296,17 @@ class ParquetPackageStore(PackageStore):
 
     PACKAGE_FILE_EXT = '.parq'
 
+    def __init__(self, user, package, mode):
+        super(ParquetPackageStore, self).__init__(user, package, mode)
+        if fastparquet is None:
+            raise StoreException("Module fastparquet is required for ParquetPackageStore.")
+
+        if self._mode == 'w':
+            path = self.create_path()
+        else:
+            path = self.get_path()
+        self.active_path = path
+
 # Helper functions
 def get_store(user, package, format=None, mode='r'):
     """
