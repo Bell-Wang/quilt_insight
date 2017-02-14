@@ -1,7 +1,7 @@
-function [] = cpr_annual_csv(year, daysInYear, ulocs, daily_samples, res)
+function [] = cpr_annual_csv(filename, year, daysInYear, ulocs, daily_samples, res)
 
 % These are the list of locations where data exists
-lat_lon_pairs = csvread('SolarAnywhere_Lat_Lon.csv');
+lat_lon_pairs = csvread(filename);
 
 % String used to programatically access the day of year from .mat files
 doy = 'DOY';
@@ -62,6 +62,6 @@ for coord = 1:ulocs
         result = [result; daily_res];
     end
     % Write the year for the given location to a csv.
-    csvwrite(strcat('csv/',loc_str,'_',num2str(year),'_.csv'), result);
+    csvwrite(strcat('csv/',loc_str,'_',num2str(year),'.csv'), result);
 end
 end
