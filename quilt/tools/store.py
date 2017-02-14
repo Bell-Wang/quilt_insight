@@ -326,6 +326,14 @@ class ParquetPackageStore(PackageStore):
         path = self.active_path + name + self.PACKAGE_FILE_EXT
         fastparquet.write(path, df)
 
+    def get(self, path):
+        """
+        Read a DataFrame to the store.
+        """
+        fpath = self.get_path() + path + self.PACKAGE_FILE_EXT
+        pfile = fastparquet.ParquetFile(fpath)
+        return pfile.to_pandas()
+
 # Helper functions
 def get_store(user, package, format=None, mode='r'):
     """
