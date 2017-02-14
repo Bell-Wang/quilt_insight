@@ -347,8 +347,10 @@ class SparkPackageStore(ParquetPackageStore):
     """
     Spark Implementation of PackageStore.
     """
-
-    pass
+    def __init__(self, user, package, mode):
+        super(SparkPackageStore, self).__init__(user, package, mode)
+        if SparkSession is None:
+            raise StoreException("Exc.")
 
 # Helper functions
 def get_store(user, package, format=None, mode='r'):
