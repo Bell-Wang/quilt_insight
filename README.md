@@ -7,7 +7,7 @@
 
 [Back to Table of Contents] (README.md#table-of-contents)
 
-<img src="./images/quilt_data.pdf" width="500">
+<img src="./images/quilt_data.png" width="500">
 
 Rich Inman's Data Engineering Project for Insight-SV-Jan-2017.
 
