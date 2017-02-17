@@ -11,6 +11,8 @@
 
 Rich Inman's Data Engineering Project for Insight-SV-Jan-2017.
 
+The project was a consulting project for a company called [Quilt Data](https://www.quiltdata.com).
+
 ##Repo directory structure
 [Back to Table of Contents] (README.md#table-of-contents)
 
