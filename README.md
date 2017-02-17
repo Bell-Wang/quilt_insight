@@ -11,7 +11,14 @@
 
 Rich Inman's Data Engineering Project for Insight-SV-Jan-2017.
 
-The project was a consulting project for a company called [Quilt Data](https://www.quiltdata.com).
+The project was a consulting project for a company called [Quilt Data](https://www.quiltdata.com). 
+
+Quilt is a data package manager. You can use data packages from the community, or publish packages for others to use.
+
+`quilt` is the command-line client that builds, retrieves, and stores packages. 
+Prior to my [Insight Data Engineering project](http://insightdataengineering.com/), `quilt` contained a Python client that allowed users working in python on a single machine to quickly and easily import data into Pandas DataFrames. For this purpose `quilt` stored data frames in a high-efficiency, memory-mapped binary format known as [HDF5](https://support.hdfgroup.org/HDF5/). This provided access to data frames [5X to 20X faster](http://wesmckinney.com/blog/pandas-and-apache-arrow/).
+
+Realizing that distributed conputing is quickly growing in popularity, Quilt Data decided that they would like to extend `quilt` client support to the [Apache Spark framework](http://spark.apache.org/), which was the primary thrust of my project.
 
 ##Repo directory structure
 [Back to Table of Contents] (README.md#table-of-contents)
