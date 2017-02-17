@@ -17,6 +17,8 @@ My Repo Structure
 	├── README.md 
 	├── __init__.py
 	├── .gitignore
+	├── images
+	|   └── quilt_logo.pdf
 	└── data_tools
 	|   └── cpr_annual_csv.m
 	|   └── read_parquet.py
