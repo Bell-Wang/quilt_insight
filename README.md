@@ -2,6 +2,7 @@
 
 1. [Description] (README.md#description)
 2. [Repo directory structure] (README.md#repo-directory-structure)
+3. [Known Issues] (README.md#known-issues)
 
 ##Description
 
@@ -9,16 +10,19 @@
 
 <img src="./images/quilt_data.png" width="500">
 
-Rich Inman's Data Engineering Project for Insight-SV-Jan-2017.
+### Rich Inman's Data Engineering Project for Insight-SV-Jan-2017.
 
-The project was a consulting project for a company called [Quilt Data](https://www.quiltdata.com). 
-
-Quilt is a data package manager. You can use data packages from the community, or publish packages for others to use.
+The project was a consulting project for a company called [Quilt Data](https://www.quiltdata.com). `quilt` is a data package manager. You can use data packages from the community, or publish packages for others to use.
 
 `quilt` is the command-line client that builds, retrieves, and stores packages. 
 Prior to my [Insight Data Engineering project](http://insightdataengineering.com/), `quilt` contained a Python client that allowed users working in python on a single machine to quickly and easily import data into Pandas DataFrames. For this purpose `quilt` stored data frames in a high-efficiency, memory-mapped binary format known as [HDF5](https://support.hdfgroup.org/HDF5/). This provided access to data frames [5X to 20X faster](http://wesmckinney.com/blog/pandas-and-apache-arrow/).
 
 Realizing that distributed conputing is quickly growing in popularity, Quilt Data decided that they would like to extend `quilt` client support to the [Apache Spark framework](http://spark.apache.org/), which was the primary thrust of my project.
+
+## Known Issues
+[Back to Table of Contents] (README.md#table-of-contents)
+
+- `Python 3.6` - Install fails due to missing HDF5 dependencies. Try Python 3.5. For example if you're using Anaconda, create a 3.5 environment: `conda create -n ENV python=3.5`.
 
 ##Repo directory structure
 [Back to Table of Contents] (README.md#table-of-contents)
