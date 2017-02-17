@@ -25,7 +25,7 @@ Realizing that distributed conputing is quickly growing in popularity, Quilt Dat
 
 ### Serialization Format
 
-<img src="./images/parquet.png" width="500">
+<img src="./images/parquet.png">
 
 [Apache Spark](http://spark.apache.org/) does not currently support [HDF5](https://support.hdfgroup.org/HDF5/) serialization. The addition of this feature would require the modification of Spark's source code, which is written in [Scala](https://www.scala-lang.org/), and is beyond the scope of a three week project. As a result, the identification of suitable alternative for serialization was the primary concern. Realizing that the current data frames `quilt` supports are highly structured with schema that do not evolve over time, a columnar data store like [Parquet](https://parquet.apache.org/) was chosen in place of [HDF5](https://support.hdfgroup.org/HDF5/).
 
