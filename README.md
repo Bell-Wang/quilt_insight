@@ -7,6 +7,8 @@
 
 [Back to Table of Contents] (README.md#table-of-contents)
 
+<img src="./images/quilt_data.pdf" width="500">
+
 Rich Inman's Data Engineering Project for Insight-SV-Jan-2017.
 
 ##Repo directory structure
