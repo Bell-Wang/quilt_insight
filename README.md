@@ -1,13 +1,13 @@
-# Table of Contents
+# Table of Contents <a name="table-of-contents"></a>
 
-1. [Description] (README.md#description)
-2. [Project Contribution] (README.md#project-contribution)
-3. [Known Issues] (README.md#known-issues)
-4. [Repo directory structure] (README.md#repo-directory-structure)
+1. [Description](README.md#description)
+2. [Project Contribution](README.md#project-contribution)
+3. [Known Issues](README.md#known-issues)
+4. [Repo directory structure](README.md#repo-directory-structure)
 
-##Description
+##Description <a name="description"></a>
 
-[Back to Table of Contents] (README.md#table-of-contents)
+[Back to Table of Contents](README.md#table-of-contents)
 
 <img src="./images/quilt_data.png" width="500">
 
@@ -20,8 +20,8 @@ Prior to my [Insight Data Engineering project](http://insightdataengineering.com
 
 Realizing that distributed conputing is quickly growing in popularity, Quilt Data decided that they would like to extend `quilt` client support to the [Apache Spark framework](http://spark.apache.org/), which was the primary thrust of my project.
 
-## Project Contribution
-[Back to Table of Contents] (README.md#table-of-contents)
+## Project Contribution <a name="project-contribution"></a>
+[Back to Table of Contents](README.md#table-of-contents)
 
 ### Serialization Format
 
@@ -29,13 +29,13 @@ Realizing that distributed conputing is quickly growing in popularity, Quilt Dat
 
 [Apache Spark](http://spark.apache.org/) does not currently support [HDF5](https://support.hdfgroup.org/HDF5/) serialization. The addition of this feature would require the modification of Spark's source code, which is written in [Scala](https://www.scala-lang.org/), and is beyond the scope of a three week project. As a result, the identification of suitable alternative for serialization was the primary concern. Realizing that the current data frames `quilt` supports are highly structured with schema that do not evolve over time, a columnar data store like [Parquet](https://parquet.apache.org/) was chosen in place of [HDF5](https://support.hdfgroup.org/HDF5/).
 
-## Known Issues
-[Back to Table of Contents] (README.md#table-of-contents)
+## Known Issues <a name="known-issues"></a>
+[Back to Table of Contents](README.md#table-of-contents)
 
 - `Python 3.6` - Install fails due to missing HDF5 dependencies. Try Python 3.5. For example if you're using Anaconda, create a 3.5 environment: `conda create -n ENV python=3.5`.
 
-##Repo directory structure
-[Back to Table of Contents] (README.md#table-of-contents)
+##Repo directory structure <a name="repo-directory-structure"></a>
+[Back to Table of Contents](README.md#table-of-contents)
 
 My Repo Structure
 
