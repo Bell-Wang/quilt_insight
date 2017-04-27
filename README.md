@@ -5,7 +5,7 @@
 3. [Known Issues](README.md#known-issues)
 4. [Repo directory structure](README.md#repo-directory-structure)
 
-##Description <a name="description"></a>
+## Description <a name="description"></a>
 
 [Back to Table of Contents](README.md#table-of-contents)
 
@@ -34,7 +34,7 @@ Realizing that distributed conputing is quickly growing in popularity, Quilt Dat
 
 - `Python 3.6` - Install fails due to missing HDF5 dependencies. Try Python 3.5. For example if you're using Anaconda, create a 3.5 environment: `conda create -n ENV python=3.5`.
 
-##Repo directory structure <a name="repo-directory-structure"></a>
+## Repo directory structure <a name="repo-directory-structure"></a>
 [Back to Table of Contents](README.md#table-of-contents)
 
 My Repo Structure
